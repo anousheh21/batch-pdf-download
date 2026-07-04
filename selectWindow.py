@@ -17,8 +17,9 @@ def selectWindow():
     selectedIndex = menu.show()
     selectedWindow = windows[selectedIndex]
 
-    print(selectedWindow)
+    return selectedWindow
 
 
 if __name__ == "__main__":
-    selectWindow()
+    selectedWindow = selectWindow()
+    print(selectedWindow)
