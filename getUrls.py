@@ -1,6 +1,6 @@
 import subprocess
 
-def rename():
+def getUrls():
     selectedWindowUrls = subprocess.run(
         ["osascript", "getUrls.applescript", "AppleScript Beginner Tutorial"],
         capture_output=True,
@@ -12,9 +12,10 @@ def rename():
     for selectedWindowUrl in selectedWindowUrls.stdout.splitlines():
         urls.append(selectedWindowUrl)
     
-    print(urls)
+    return urls
 
 
 
 if __name__ == "__main__":
-    rename()
+    urls = getUrls()
+    print(urls)
