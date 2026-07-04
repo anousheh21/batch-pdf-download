@@ -13,7 +13,7 @@ parser.add_argument('downloadDestination')
 args = parser.parse_args()
 
 # Remove this eventually as it will come automated
-pdfUrl = 'https://learn.lboro.ac.uk/pluginfile.php/2137213/mod_resource/content/10/25COC102_W1Lec2-Tools.pdf'
+# pdfUrl = 'https://learn.lboro.ac.uk/pluginfile.php/2137213/mod_resource/content/10/25COC102_W1Lec2-Tools.pdf'
 
 def getPdf(pdfUrl):
     headers = {
@@ -45,13 +45,14 @@ def checkValidDestination():
 
 
 
-def downloadPdf():
-    response = getPdf(pdfUrl)
+def downloadPdf(url):
+    response = getPdf(url)
     contentType = checkUrlContentType(response)
     downloadDir = checkValidDestination()
 
     if not contentType.lower() or contentType.split(";", 1)[0].strip().lower() != "application/pdf":
-        raise TypeError("Incorrect Content Type")
+        # raise TypeError("Incorrect Content Type")
+        return
 
     content_disposition = response.headers.get("Content-Disposition")
     filename = None
@@ -76,5 +77,6 @@ def downloadPdf():
 
 
 if __name__ == "__main__":
-    downloadPdf()
+    testUrl = 'https://learn.lboro.ac.uk/pluginfile.php/2137213/mod_resource/content/10/25COC102_W1Lec2-Tools.pdf'
+    downloadPdf(testUrl)
 
