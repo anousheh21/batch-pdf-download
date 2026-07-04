@@ -8,13 +8,6 @@ from pathlib import Path
 load_dotenv()
 cookie = os.getenv("AUTH_COOKIE")
 
-# parser = argparse.ArgumentParser()
-# parser.add_argument('downloadDestination')
-# args = parser.parse_args()
-
-# Remove this eventually as it will come automated
-# pdfUrl = 'https://learn.lboro.ac.uk/pluginfile.php/2137213/mod_resource/content/10/25COC102_W1Lec2-Tools.pdf'
-
 def getPdf(pdfUrl):
     headers = {
         "Cookie": cookie
