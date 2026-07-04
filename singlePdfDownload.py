@@ -53,7 +53,6 @@ def downloadPdf():
     if not contentType.lower() or contentType.split(";", 1)[0].strip().lower() != "application/pdf":
         raise TypeError("Incorrect Content Type")
 
-    # Get filename
     content_disposition = response.headers.get("Content-Disposition")
     filename = None
     
