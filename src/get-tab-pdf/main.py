@@ -1,7 +1,7 @@
 import argparse
-from getUrls import getUrls
-from selectWindow import selectWindow
-from singlePdfDownload import downloadPdf
+from .getUrls import getUrls
+from .selectWindow import selectWindow
+from .singlePdfDownload import downloadPdf
 
 parser = argparse.ArgumentParser(
     description="A macOS tool for downloading PDFs from Google Chrome in bulk"
