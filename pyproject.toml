@@ -17,3 +17,6 @@ dependencies = [
 
 [project.scripts]
 get-tab-pdf = "get_tab_pdf.main:main"
+
+[tool.setuptools.package-data]
+get_tab_pdf = ["*.applescript"]
