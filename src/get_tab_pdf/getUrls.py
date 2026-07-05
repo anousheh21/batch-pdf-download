@@ -1,8 +1,11 @@
 import subprocess
+from pathlib import Path
 
 def getUrls(selectedWindow):
+    parentDir = Path(__file__).resolve().parent
+
     selectedWindowUrls = subprocess.run(
-        ["osascript", "getUrls.applescript", selectedWindow],
+        ["osascript", str(parentDir / "getUrls.applescript"), selectedWindow],
         capture_output=True,
         text=True
     )

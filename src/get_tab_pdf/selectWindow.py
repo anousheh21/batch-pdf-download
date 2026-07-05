@@ -1,9 +1,12 @@
+from pathlib import Path
 from simple_term_menu import TerminalMenu
 import subprocess
 
 def selectWindow():
+    parentDir = Path(__file__).resolve().parent
+
     activeTabs = subprocess.run(
-        ["osascript", "findWindows.applescript"],
+        ["osascript", str(parentDir / "findWindows.applescript")],
         capture_output=True,
         text=True
     )
